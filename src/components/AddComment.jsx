@@ -9,7 +9,7 @@ class AddComment extends Component {
     comment: {
       comment: "",
       rate: "",
-      elementId: this.props.asin, // مقدار asin از props گرفته می‌شود
+      elementId: this.props.asin, 
     }
   };
 

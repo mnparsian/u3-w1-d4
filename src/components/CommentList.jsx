@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import SingleComment from "./SingleComment"; // وارد کردن کامپوننت SingleComment
+import SingleComment from "./SingleComment"; 
 
 class CommentList extends Component {
   state = {
-    comments: [], // تعریف state برای ذخیره کامنت‌ها
+    comments: [], 
   };
 
   componentDidMount() {
     const { asin } = this.props;
 
-    // درخواست به API برای دریافت کامنت‌ها
+    
     fetch(`https://striveschool-api.herokuapp.com/api/comments/${asin}`, {
         headers: {
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzM3MTBhMjhhZDEyOTAwMTU4NzZiZDIiLCJpYXQiOjE3MzI3OTY5NDIsImV4cCI6MTczNDAwNjU0Mn0.NNHDzscXV2OaYuMmfZisR3Lba_20LLdqsIoxf_zsGm8"
@@ -23,7 +23,7 @@ class CommentList extends Component {
         }
       })
       .then((data) => {
-        this.setState({ comments: data }); // ذخیره داده‌ها در state
+        this.setState({ comments: data }); 
       })
       .catch((error) => console.error("Error:", error));
   }
@@ -36,7 +36,7 @@ class CommentList extends Component {
         <ul>
           {comments.map((comment) => (
             <li key={comment._id}>
-              <SingleComment comment={comment} /> {/* استفاده از SingleComment برای نمایش هر کامنت */}
+              <SingleComment comment={comment} /> 
             </li>
           ))}
         </ul>
